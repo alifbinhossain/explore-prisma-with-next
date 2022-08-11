@@ -17,9 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@utils/*": ["src/utils/*"],
-      "@services/*": ["src/components/services/*"],
-      "@layout/*": ["src/components/layout/*"],
-      "@shared/*": ["src/components/shared/*"]
+      "@services/*": ["src/services/*"],
+      "@components/*": ["src/components/*"]
     }
   },
   "exclude": ["node_modules"],

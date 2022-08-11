@@ -1,22 +1,20 @@
 import React from 'react';
 import clsx from 'clsx';
 import * as BsIcons from 'react-icons/bs';
-import { useAppDispatch, useAppSelector } from '@services/redux/store/store';
-import { setTheme } from '@services/redux/slices/themeSlice';
+import { useTheme } from 'next-themes';
 
 const ToggleButton: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const theme = useAppSelector((state) => state.theme.theme);
+  const { theme, setTheme } = useTheme();
 
   const handleToggle = () => {
     if (theme == 'light') {
-      dispatch(setTheme('dark'));
+      setTheme('dark');
     } else if (theme == 'dark') {
-      dispatch(setTheme('light'));
+      setTheme('light');
     }
   };
 
-  console.log(theme);
+  if (!theme) return null;
 
   return (
     <button
